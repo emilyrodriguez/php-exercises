@@ -14,21 +14,26 @@
 			} elseif (is_string($stuff)) {
 				echo "{$stuff} is a string\n";
 			}
-			
+
 		}
+	echo "\n";
+	
 	foreach ($things as $stuff) {
 		if (is_scalar($stuff)) {
 			echo "{$stuff} is a scalar\n";
-		} else {
-			echo "{$stuff} is not a scalar\n";
 		}
 	}
 
+	echo "\n";
 
-
-
-
-
-
-
-
+	foreach ($things as $stuff) {
+		if (is_array($stuff)) {
+			echo "Array ";
+			foreach ($stuff as $number) {
+				echo "{$number},";
+			}
+			echo "\n";
+		}else {
+			echo "{$stuff}\n";
+		}
+	}
