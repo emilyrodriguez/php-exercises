@@ -4,18 +4,17 @@
 
 	fwrite(STDOUT, "Welcome! Guess my number, it's between 1 and 100. \n");
 	
-		do { 
-			$guess = fgets(STDIN);
+		do {
+			$guess = trim(fgets(STDIN));
 			fwrite(STDOUT, "What is your guess? \n");
 			if ($guess < $number) {
-				echo "Higher!\n";
-				$guessCount++;
+				fwrite(STDOUT, "Higher!\n");
 			} elseif ($guess > $number) {
-				echo "Lower!\n";
-				$guessCount++;
+				fwrite(STDOUT, "Lower!\n");
 			} else {
-				echo "You got it!\n";
-				echo "Guesses made: " . $guessCount . "\n";
-				echo "To exit game, press Control + C\n";
+				fwrite(STDOUT, "You got it!\n");
+				fwrite(STDOUT, "Guesses made: " . $guessCount . "\n");
+				fwrite(STDOUT, "To exit game, press Control + C\n");
 			}
+		 	$guessCount++;
 			} while ($guess !== $number);
