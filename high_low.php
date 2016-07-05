@@ -1,8 +1,8 @@
 <?php
-	$number = mt_rand(1, 50);
+	$number = mt_rand(1, 100);
 	$guessCount = 1;
 
-	fwrite(STDOUT, "Welcome! Guess my number, it's between 1 and 50. \n");
+	fwrite(STDOUT, "Welcome! Guess my number, it's between 1 and 100. \n");
 	
 		do { 
 			$guess = fgets(STDIN);
