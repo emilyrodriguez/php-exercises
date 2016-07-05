@@ -23,9 +23,11 @@
 	);
 
 		foreach ($books as $title => $book) {
-			echo "{$title}\n";
 				foreach ($book as $details => $detailValue) {
-					echo "{$details}: {$detailValue}\n";
+					if ($detailValue >= 1950){
+						echo "{$title}\n";
+						echo "{$details}: {$detailValue}\n";
+					}
 				}
 		}
 	
