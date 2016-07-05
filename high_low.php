@@ -7,7 +7,7 @@
 		do {
 			$guess = trim(fgets(STDIN));
 			fwrite(STDOUT, "What is your guess? \n");
-			
+
 			if ($guess < $number) {
 				fwrite(STDOUT, "Higher!\n");
 			} elseif ($guess > $number) {
@@ -19,3 +19,5 @@
 			}
 		 	$guessCount++;
 		} while ($guess !== $number);
+?>
+
