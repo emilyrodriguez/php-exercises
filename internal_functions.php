@@ -1,53 +1,66 @@
 <?php
-info();
 
-function info () {
-    fwrite(STDOUT,"What is your name?\n");
-    $student = trim(fgets(STDIN));
-    $grades = [];
-    inputSubject($grades, $student);
-}
+// TODO: Create your inspect() function here
+// function inspect($value) {
+// 	if (is_array($value)) {
+// 		return 'The ' .gettype($value) . ' is Array (' .join($value, ',') . ')';
+			
+// 		}
+// 		return "The " .gettype($value) . ' is ' . $value;
+// 	}
 
-    function inputSubject (&$grades, $student) {
-        fwrite(STDOUT, "What is the name of the subject?\n");
-        $subject = trim(fgets(STDIN));
-        inputGrades($grades);
+ function inspect($value) {
+ 	if (is_array($value) &&empty($value)) {
+ 		return 'The array is empty';
+ 	} elseif (is_array($value)) {
+ 		return 'The ' .gettype($value) . ' is array (' . join($value, ', ').')';
+ 	} elseif (is_null($value)) {
+ 		return 'The value is NULL';
+ 	} elseif (is_bool($value)) {
+ 		if ($value) {
+ 			return 'The boolean is TRUE';
+ 		}else {
+ 			return 'The boolean is FALSE';
+ 		}
+ 	}else if (is_string($value) && $value == "") {
+ 		return 'The value is an empty string';
+ 	}
+ 	return "The " .gettype($value) . ' is ' . $value;
+ }
 
-        fwrite(STDOUT, "Do you want to add another subject? Y or N?\n");
-        $continue = trim(fgets(STDIN));
-        if ($continue == "Y" || "y"){
-            inputSubject($grades, $student);
-        } else {
-            gradeEval($grades, $student);
-        }
-    }
-    function inputGrades(&$grades) {
-        do {
-            fwrite(STDOUT,"What is your grade?\n");
-            $grade = trim(fgets(STDIN));
-            var_dump((int) $grade);
-            if (!is_numeric($grade)) {
-                fwrite(STDERR, "Please use numbers only.\n");
-            }  else {
-                array_push($grades, $grade);
-            }
-            fwrite(STDOUT, "Do you have more grades to enter? Y or N?\n");
-            $continueGrade = trim(fgets(STDIN));
-        } while ($continueGrade == "Y" || "y");
-    }
+// Do not mofify these variables!
+$string1 = "I'm a little teapot";
+$string2 = '';
+$array1 = [];
+$array2 = [1, 2, 3];
+$bool1 = true;
+$bool2 = false;
+$num1 = 0;
+$num2 = 0.0;
+$num3 = 12;
+$num4 = 14.4;
+$null = NULL;
 
-    function calculate ($grades) {
-        $average = array_sum($grades) / count($grades);
-        return $average;
-    }
+// TODO: After each echo statement, use inspect() to output the variable's type and its value
 
-    function gradeEval ($grades, $student) {
-        $isAwesome = 80;
-        $average = calculate($grades);
-        if ($average >= $isAwesome){
-            fwrite(STDOUT, $student . ", you're doing awesome! Your average is: " . $average . "!\n");
-        }else {
-            fwrite(STDOUT, $student . ", you should study more! Your average is: " . $average . "!\n");
-        }  
-    }
-?>
+echo 'Inspecting $num1:' . inspect($num1) . PHP_EOL;
+
+echo 'Inspecting $num2:' . inspect($num2) . PHP_EOL;
+
+echo 'Inspecting $num3:' . inspect($num3) . PHP_EOL;
+
+echo 'Inspecting $num4:' . inspect($num4) . PHP_EOL;
+
+echo 'Inspecting $null:' . inspect($null) . PHP_EOL;
+
+echo 'Inspecting $bool1' . inspect($bool1) . PHP_EOL;
+
+echo 'Inspecting $bool2' . inspect($bool2) . PHP_EOL;
+
+echo 'Inspecting $string1' . inspect($string1) . PHP_EOL;
+
+echo 'Inspecting $string2' . inspect($string2) . PHP_EOL;
+
+echo 'Inspecting $array1' . inspect($array1) . PHP_EOL;
+
+echo 'Inspecting $array2' . inspect($array2) . PHP_EOL;
