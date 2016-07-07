@@ -15,9 +15,9 @@ function info () {
 
         fwrite(STDOUT, "Do you want to add another subject? Y or N?\n");
         $continue = trim(fgets(STDIN));
-        if ($continue == "Y" || "y"){
+        if ($continue == "Y"){
             inputSubject($grades, $student);
-        } elseif ($continue == "N" || "n") {
+        } elseif ($continue == "N") {
             gradeEval($grades, $student);
         }
     }
@@ -33,7 +33,7 @@ function info () {
             }
             fwrite(STDOUT, "Do you have more grades to enter? Y or N?\n");
             $continueGrade = trim(fgets(STDIN));
-        } while ($continueGrade == "Y" || "y");
+        } while ($continueGrade == "Y");
     }
 
     function calculate ($grades) {
