@@ -2,6 +2,8 @@
 
 function humanizedList($physicistsArray) {
 	$famousFakePhysicists = array_pop($physicistsArray);
+	sort($physicistsArray);
+	print_r($physicistsArray);
 	$famousFakePhysicists = array_push($physicistsArray, " and Tony Stark");
 	$famousFakePhysicists = implode(',', $physicistsArray);
 	return $famousFakePhysicists;
@@ -12,6 +14,8 @@ $physicistsString = ' Gordon Freeman, Samantha Carter, Sheldon Cooper, Quinn Mal
 $physicistsArray = [];
 $physicistsArray = explode(',', $physicistsString);
 $famousFakePhysicists = humanizedList($physicistsArray);
+
+
 echo "Some of the most famous fictional theoretical physicists are {$famousFakePhysicists}.\n";
 
 
