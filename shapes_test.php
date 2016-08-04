@@ -6,9 +6,9 @@ $rectangle1 = new Rectangle(6,12);
 $rectangle2 = new Rectangle(12,24);
 $rectangle3 = new Rectangle(18,36);
 
-$square1 = new Square(6,6);
-$square2 = new Square(12,12);
-$square3 = new Square(18,18);
+$square1 = new Square(6);
+$square2 = new Square(12);
+$square3 = new Square(18);
 
 echo "Area\n";
 echo $rectangle1->area() . PHP_EOL;

@@ -9,5 +9,6 @@ class Rectangle {
 	}
 	public function area() {
 		return $this->width * $this->height;
+		return $this->area;
 	}
 }
