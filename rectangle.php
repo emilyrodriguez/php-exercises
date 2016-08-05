@@ -1,7 +1,7 @@
 <?php
 class Rectangle {
-	public $width;
-	public $height;
+	private $width;
+	private $height;
 
 	public function __construct($width, $height) {
 		$this->width = $width;
@@ -9,6 +9,8 @@ class Rectangle {
 	}
 	public function area() {
 		return $this->width * $this->height;
-		return $this->area;
+	}	
+	public function perimeter() {
+		return $this->height * 4;
 	}
 }
